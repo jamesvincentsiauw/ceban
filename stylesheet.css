@@ -5,6 +5,7 @@
     background: #eee !important;
 }
 
+
 .btn-primary:hover,
 .btn-primary:focus {
     background-color: #108d6f;
@@ -25,7 +26,14 @@ section {
     padding: 60px 0;
 }
 
-section .section-title {
+section .section-title-up {
+    text-align: center;
+    color: #e4ea8c;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+section .section-title-down {
     text-align: center;
     color: #007b5e;
     margin-bottom: 50px;
@@ -34,6 +42,10 @@ section .section-title {
 
 #featured_event .card {
     border: none;
+    background: #ffffff;
+}
+
+#category {
     background: #ffffff;
 }
 
@@ -134,4 +146,90 @@ section .section-title {
     max-width: 30px;
     width: 100%;
     height: auto;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+body {
+    background: #2c7873;
+    background: -webkit-linear-gradient(to right, #2c7873, #6fb98f);
+    background: linear-gradient(to right, #2c7873, #6fb98f);
+    min-height: 100vh;
+}
+
+.form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card_category {
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 40px;
+    box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.25), -1px -1px 10px 2px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.card_category .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+}
+
+.card_category .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.card_category .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+}
+
+.card_category:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 2px 2px 15px 7px rgba(0,0,0,0.25),
+    -2px -2px 15px 7px rgba(0,0,0,0.22);
+}
+
+.title-white {
+    color: white;
+}
+
+.title-black {
+    color: black;
+}
+
+@media all and (max-width: 500px) {
+    .card-list {
+        /* On small screens, we are no longer using row direction but column */
+        flex-direction: column;
+    }
 }

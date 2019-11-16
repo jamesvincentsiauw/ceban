@@ -11,46 +11,46 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="logoceban.png" alt="" class="logo">
-    </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="home.html">
+            <img src="ceban.png" alt="" class="logo">
+        </a>
 
-    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Featured</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categories
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Seminar</a>
-                    <a class="dropdown-item" href="#">Concert</a>
-                    <a class="dropdown-item" href="#">Workshop</a>
-                    <a class="dropdown-item" href="#">Social</a>
-                    <a class="dropdown-item" href="#">Competition</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contact</a>
-            </li>
-            <button type="button" class="btn btn-outline-primary">Create Event!</button>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search Events" aria-label="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Featured</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="">Seminar</a>
+                        <a class="dropdown-item" href="#">Concert</a>
+                        <a class="dropdown-item" href="#">Workshop</a>
+                        <a class="dropdown-item" href="#">Social</a>
+                        <a class="dropdown-item" href="#">Competition</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+                </li>
+                <button type="button" class="btn btn-outline-success">Create Event!</button>
+            </ul>
 
+            <button class="btn btn-outline-success my-2 my-sm-0">Login/Register</button>
+
+        </div>
     </div>
 </nav>
 
@@ -59,27 +59,45 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+
 <section id="searchbar" class="pb-5">
     <div class="container">
-        Explore great events in Bandung!
+        <h5 class="section-title-up h1">Explore great events in Bandung!</h5>
     </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="bg-white p-5 rounded shadow">
+
+                <form action="">
+                    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                        <div class="input-group">
+                            <input type="search" placeholder="What event are you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                            <div class="input-group-append">
+                                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </section>
 
 
-
-<!-- Team -->
 <section id="featured_event" class="pb-5">
     <div class="container">
-        <h5 class="section-title h1">FEATURED EVENTS</h5>
+        <h5 class="section-title-down h2">FEATURED EVENTS</h5>
         <div class="row">
-            <!-- Team member -->
+
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
+                                    <p><img class=" img-fluid" src="bislig.png" alt="card image"></p>
                                     <h4 class="card-title">Seminar BIST League 2.0</h4>
                                     <p class="card-text">Seminar bertajuk pemanfaatan teknologi untuk masyarakat Indonesia.</p>
                                 </div>
@@ -119,15 +137,14 @@
                     </div>
                 </div>
             </div>
-            <!-- ./Team member -->
-            <!-- Team member -->
+
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png" alt="card image"></p>
+                                    <p><img class=" img-fluid" src="dwp.png" alt="card image"></p>
                                     <h4 class="card-title">DWP Bandung</h4>
                                     <p class="card-text">Koey nge-DJ</p>
                                 </div>
@@ -167,15 +184,14 @@
                     </div>
                 </div>
             </div>
-            <!-- ./Team member -->
-            <!-- Team member -->
+
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_03.png" alt="card image"></p>
+                                    <p><img class=" img-fluid" src="android.jpg" alt="card image"></p>
                                     <h4 class="card-title">Android Development Workshop</h4>
                                     <p class="card-text">Pelatihan pembuatan aplikasi Android sederhana dari HMIF ITB.</p>
                                 </div>
@@ -215,13 +231,66 @@
                     </div>
                 </div>
             </div>
-            <!-- ./Team member -->
-
-
         </div>
     </div>
 </section>
-<!-- Team -->
+
+
+
+<section id="category" class="pb-5">
+    <div class="container">
+        <h5 class="section-title-down h2">PICK A CATEGORY</h5>
+        <div class="cards-list">
+
+            <div class="card_category 1">
+                <div class="card_image"> <img src="seminar.jpg" /> </div>
+                <div class="card_title title-white">
+                    <p>Seminar</p>
+                </div>
+            </div>
+
+            <div class="card_category 2">
+                <div class="card_image"> <img src="concert.jpg" /> </div>
+                <div class="card_title title-white">
+                    <p>Concert</p>
+                </div>
+            </div>
+
+            <div class="card_category 3">
+                <div class="card_image"> <img src="workshop.jpg" /> </div>
+                <div class="card_title title-white">
+                    <p>Workshop</p>
+                </div>
+            </div>
+
+            <div class="card_category 4">
+                <div class="card_image"> <img src="social.jpg" /> </div>
+                <div class="card_title title-white">
+                    <p>Social</p>
+                </div>
+            </div>
+
+            <div class="card_category 1">
+                <div class="card_image"> <img src="competition.jpg" /> </div>
+                <div class="card_title title-white">
+                    <p>Competition</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="about_us" class="pb-5">
+    <div class="card-body text-center">
+        <h4 class="text-white">Tugas Besar Rekayasa Perangkat Lunak <br> <br> CEBAN: Cari Event Bandung </h4>
+        <p class="h5 text-white"> David Petra Natanael - 18217011 </p>
+        <p class="h5 text-white"> Alfiansyah Mahareksa - 18217022 </p>
+        <p class="h5 text-white"> Andre Juliantama - 18217040 </p>
+        <p class="h5 text-white"> Vincent - 18217042 </p>
+    </div>
+</section>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
