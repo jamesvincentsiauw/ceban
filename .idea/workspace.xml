@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44f12fd3-22bc-4735-936d-fe91021098d1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/create_event.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CEBAN BRO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bislig.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceban.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/competition.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/concert.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dwp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_organizer.html" beforeDir="false" afterPath="$PROJECT_DIR$/event_organizer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logoceban.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seminar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/social.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workshop.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +60,7 @@
       <updated>1573907250489</updated>
       <workItem from="1573907251902" duration="6882000" />
       <workItem from="1573990597541" duration="5700000" />
-      <workItem from="1574060563420" duration="14720000" />
+      <workItem from="1574060563420" duration="16634000" />
     </task>
     <servers />
   </component>
