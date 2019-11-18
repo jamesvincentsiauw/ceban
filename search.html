@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CEBAN: Cari Event Bandung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="home.html">
+            <img src="ceban.png" alt="" class="logo">
+        </a>
+
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Featured</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="">Seminar</a>
+                        <a class="dropdown-item" href="#">Concert</a>
+                        <a class="dropdown-item" href="#">Workshop</a>
+                        <a class="dropdown-item" href="#">Social</a>
+                        <a class="dropdown-item" href="#">Competition</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+                </li>
+                <!-- <button type="button" class="btn btn-outline-success">Create Event!</button> -->
+                <a class="btn btn-outline-success" href="#" role="button">Create Event!</a>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <!-- <button type="button" class="btn btn-success my-2 my-sm-0">Login/Register</button> -->
+            <a class="btn btn-success" href="register.html" role="button">Login/Register</a>
+        </div>
+    </div>
+</nav>
+
+<section id="search_result" class="pb-5">
+    <div class="container">
+        <hgroup class="mb20">
+            <h1 class="section-title-search h1">Search Results</h1>
+            <h2 class="section-title-search h5"><strong class="text-danger">3</strong> results were found for the search
+                for <strong class="text-danger">Lorem</strong></h2>
+        </hgroup>
+
+        <section class="col-xs-12 col-sm-6 col-md-12">
+            <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a href="#" title="Lorem ipsum" class="thumbnail"><img src="http://lorempixel.com/250/140/people"
+                                                                           alt="Lorem ipsum"/></a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-2">
+                    <ul class="meta-search">
+                        <li><i class="glyphicon glyphicon-calendar"></i> <span>Date: 02/15/2014</span></li>
+                        <li><i class="glyphicon glyphicon-time"></i> <span>Time: 4:28 pm</span></li>
+                        <li><i class="glyphicon glyphicon-tags"></i> <span>People</span></li>
+                        <button type="button" class="btn btn-outline-success">Buy Ticket!</button>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+                    <h4><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit,
+                        distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis
+                        delectus doloremque.</p>
+                </div>
+            </article>
+            <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a href="#" title="Lorem ipsum" class="thumbnail"><img src="http://lorempixel.com/250/140/food"
+                                                                           alt="Lorem ipsum"/></a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-2">
+                    <ul class="meta-search">
+                        <li><i class="glyphicon glyphicon-calendar"></i> <span>Date: 02/13/2014</span></li>
+                        <li><i class="glyphicon glyphicon-time"></i> <span>Time: 8:32 pm</span></li>
+                        <li><i class="glyphicon glyphicon-tags"></i> <span>Food</span></li>
+                        <button type="button" class="btn btn-outline-success">Buy Ticket!</button>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7">
+                    <h4><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit,
+                        distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis
+                        delectus doloremque.</p>
+                </div>
+            </article>
+            <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a href="#" title="Lorem ipsum" class="thumbnail"><img src="http://lorempixel.com/250/140/sports"
+                                                                           alt="Lorem ipsum"/></a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-2">
+                    <ul class="meta-search">
+                        <li><i class="glyphicon glyphicon-calendar"></i> <span>Date: 01/11/2014</span></li>
+                        <li><i class="glyphicon glyphicon-time"></i> <span>Time: 10:13 am</span></li>
+                        <li><i class="glyphicon glyphicon-tags"></i> <span>Sport</span></li>
+                        <button type="button" class="btn btn-outline-success">Buy Ticket!</button>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7">
+                    <h4><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit,
+                        distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis
+                        delectus doloremque.</p>
+                </div>
+            </article>
+        </section>
+    </div>
+</section>
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
