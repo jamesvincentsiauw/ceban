@@ -16,6 +16,8 @@ class CreateOwnersTable extends Migration
         Schema::create('owners', function (Blueprint $table) {
             $table->string('email');
             $table->string('organizationName')->unique();
+            $table->string('organizationPhone');
+            $table->string('location');
             $table->timestamps();
             $table->foreign('email')->references('email')->on('users')->onDelete('cascade');
         });

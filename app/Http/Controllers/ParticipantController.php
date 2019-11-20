@@ -4,23 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Participant;
-use Barryvdh\DomPDF\PDF;
+use App\Ticket;
+use App\User;
+use QrCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use PDF;
 
 class ParticipantController extends Controller
 {
-    private function isVerified($id){
-        $user = DB::table('participants')->where('participantID',$id);
-        if ($user){
-            return $user->get('verified');
-        }
-        else{
-            return false;
-        }
-    }
     public function purchase($id){
         $event = Event::all()->where('eventID',$id)->first();
         return view('admin.purchase', compact('event'));
@@ -35,43 +29,43 @@ class ParticipantController extends Controller
             $participant->participantEmail = Auth::user()->email;
             $participant->phone = $request->phone;
             $participant->qty = $request->qty;
+            $participant->verified = true;
             $participant->save();
+
+            DB::table('participants')->where('participantID', $participantID)->update([
+                'ticketFile' => $this->generateQR($participantID)
+            ]);
+            DB::table('events')->where('eventID', $id)->decrement('availableMaximumTicket', $request->qty);
             return redirect()->back()->with('success','Berhasil Membeli Tiket. ID ANDA: '.$participantID);
         }
         catch (\Exception $exception){
             return redirect()->back()->with('alert', $exception->getMessage());
         }
     }
-    public function verifyPurchase($id){
-        try {
-            $user = DB::table('participants')->where('participantID', $id);
-            $user->update([
-                'verified' => true
-            ]);
-            return redirect()->back()->with('success','verifikasi untuk pembayaran '.$id.' atas nama '.$user->get('participantName').' terverifikasi');
-        }
-        catch (\Exception $exception){
-            return redirect()->back()->with('alert', $exception->getMessage());
-        }
-    }
-    public function myTicket(){
+    public function myTickets(){
         $data = DB::table('participants')->join('events','participants.eventID', '=','events.eventID')->where('participantEmail', Auth::user()->email)->get();
-        return view('admin.mytickets',compact('data'));
+        return view('mytickets',compact('data'));
     }
-//    public function getTicket($id){
-//        try{
-//            if ($this->isVerified($id)){
-//                $user = DB::table('participants')->where('participantID', $id);
-//                $event = DB::table('events')->where('eventID',$user->get('eventID'));
-//                $pdf = PDF::loadView('tes',compact($user,$event));
-//                return $pdf->download('tiket.pdf');
-//            }
-//            else{
-//                return redirect()->back()->with('alert','You are not Verified!');
-//            }
-//        }
-//        catch (\Exception $exception){
-//            return redirect()->back()->with('alert', $exception->getMessage());
-//        }
-//    }
+    public function generateTicket($id){
+        $participant = Participant::all()->where('participantID',$id)->first();
+//        $qr_code = $participant->first()->ticketFile;
+////        $data = ['participant'=>$participant,'qr_code'=>$qr_code];
+////        $pdf = PDF::loadview('pdf',$data);
+////        return $pdf->download('ticket.pdf');
+//        $file = asset($qr_code);
+//        $name = basename($file);
+//        return response()->download($file, $name);
+        $user = User::all()->find($id);
+
+        $pdf = PDF::loadView('pdf', compact('participant'));
+        return $pdf->download('Ticket.pdf');
+    }
+    private function generateQR($id){
+        $ticket = Participant::all()->where('participantID',$id)->first();
+        $path = '/tickets/'.$ticket->participantID.'.png';
+        \QrCode::size(500)
+            ->format('png')
+            ->generate($ticket->participantID, public_path($path));
+        return $path;
+    }
 }
