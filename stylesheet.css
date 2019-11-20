@@ -431,3 +431,18 @@ hgroup h2.lead {
     width: 150px;
 
 }
+
+.roundedCorners { 
+  border: 0px solid DarkOrange;
+  border-radius: 13px; 
+  border-spacing: 0;
+  }
+.roundedCorners td, 
+.roundedCorners th { 
+  border-bottom: 0px solid DarkOrange;
+  padding: 10px; 
+  }
+.roundedCorners tr:last-child > td {
+  border-bottom: none;
+}
+
