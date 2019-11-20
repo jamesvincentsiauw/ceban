@@ -19,17 +19,21 @@ Route::get('/profile', 'UserController@profile')->middleware('auth');
 Route::post('/profile', 'UserController@editProfile')->middleware('auth');
 
 Route::get('/events', 'EventController@index');
-Route::get('/event/add', 'EventController@addForm');
-Route::post('/event/add', 'EventController@addEvent');
-Route::post('/event/edit/{id}', 'EventController@editEvent');
-Route::post('/event/delete/{id}', 'EventController@deleteEvent');
+Route::get('/event/add', 'EventController@addForm')->middleware('auth');
+Route::post('/event/add', 'EventController@addEvent')->middleware('auth');
+Route::post('/event/edit/{id}', 'EventController@editEvent')->middleware('auth');
+Route::post('/event/delete/{id}', 'EventController@deleteEvent')->middleware('auth');
 
-Route::get('/events/buy/{id}', 'ParticipantController@purchase');
-Route::post('/events/buy/{id}', 'ParticipantController@purchaseTicket');
+Route::get('/events/buy/{id}', 'ParticipantController@purchase')->middleware('auth');
+Route::post('/events/buy/{id}', 'ParticipantController@purchaseTicket')->middleware('auth');
 Route::get('/mytickets', 'ParticipantController@myTickets')->middleware('auth');
-Route::get('/download/{id}','ParticipantController@generateTicket');
+Route::get('/download/{id}','ParticipantController@generateTicket')->middleware('auth');
 
 Route::get('/owner/register', 'OwnerController@register')->middleware('auth');
-Route::post('/owner/register','OwnerController@beOwner');
-Route::post('/owner/delete/{id}', 'OwnerController@deleteOwner');
+Route::post('/owner/register','OwnerController@beOwner')->middleware('auth');
+Route::post('/owner/delete/{id}', 'OwnerController@deleteOwner')->middleware('auth');
 Route::get('/myevents', 'OwnerController@myEvents')->name('events')->middleware('auth');
+
+Route::get('/tes', function (){
+    return view('tiket');
+});

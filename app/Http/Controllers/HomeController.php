@@ -20,6 +20,9 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
+        if (\request()->get('keyword')){
+            return redirect('/search?keyword='.\request()->get('keyword'));
+        }
         $events = Event::all()->sortBy('created_at')->take(3);
         return view('home2', compact('events'));
     }

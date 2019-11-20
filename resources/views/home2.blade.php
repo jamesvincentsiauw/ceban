@@ -10,14 +10,12 @@
                     <form action="">
                         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                             <div class="input-group">
-                                <form action="/search">
-                                    <input type="search" name="keyword" id="keyword" placeholder="What event are you searching for?"
-                                           aria-describedby="button-addon1" class="form-control border-0 bg-light">
-                                    <div class="input-group-append">
-                                        <button id="button-addon1"class="btn btn-link text-primary"><i
-                                                    class="fa fa-search"></i></button>
-                                    </div>
-                                </form>
+                                <input type="text" name="keyword" id="keyword" placeholder="What event are you searching for?"
+                                       aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                                <div class="input-group-append">
+                                    <button id="button-addon1"class="btn btn-link text-primary"><i
+                                                class="fa fa-search"></i></button>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -69,7 +67,7 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                        <button type="button" class="btn btn-outline-success">Buy Ticket!</button>
+                                        <button onclick="window.location.href='/events/buy/{{$item->eventID}}'" type="button" class="btn btn-outline-success">Buy Ticket!</button>
                                     </div>
                                 </div>
                             </div>
@@ -128,9 +126,3 @@
         </div>
     </section>
 @endsection
-<script>
-    function search() {
-        var q = document.getElementById('keyword').value;
-        window.location.href('/search/'+q)
-    }
-</script>

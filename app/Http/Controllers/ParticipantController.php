@@ -17,7 +17,7 @@ class ParticipantController extends Controller
 {
     public function purchase($id){
         $event = Event::all()->where('eventID',$id)->first();
-        return view('admin.purchase', compact('event'));
+        return view('purchase', compact('event'));
     }
     public function purchaseTicket(Request  $request, $id){
         try{
@@ -47,17 +47,14 @@ class ParticipantController extends Controller
         return view('mytickets',compact('data'));
     }
     public function generateTicket($id){
+//        $datas = DB::table('participants')->join('events','participants.eventID','=','events.eventID')->where('participantID',$id)->get();
         $participant = Participant::all()->where('participantID',$id)->first();
-//        $qr_code = $participant->first()->ticketFile;
-////        $data = ['participant'=>$participant,'qr_code'=>$qr_code];
-////        $pdf = PDF::loadview('pdf',$data);
-////        return $pdf->download('ticket.pdf');
-//        $file = asset($qr_code);
-//        $name = basename($file);
-//        return response()->download($file, $name);
-        $user = User::all()->find($id);
-
-        $pdf = PDF::loadView('pdf', compact('participant'));
+        $event = Event::all()->where('eventID', $participant->eventID)->first();
+        $data = [
+            'participant' => $participant,
+            'event' => $event
+        ];
+        $pdf = PDF::loadView('pdf', $data);
         return $pdf->download('Ticket.pdf');
     }
     private function generateQR($id){
@@ -65,7 +62,7 @@ class ParticipantController extends Controller
         $path = '/tickets/'.$ticket->participantID.'.png';
         \QrCode::size(500)
             ->format('png')
-            ->generate($ticket->participantID, public_path($path));
+            ->generate("ceban@".$ticket->participantID, public_path($path));
         return $path;
     }
 }

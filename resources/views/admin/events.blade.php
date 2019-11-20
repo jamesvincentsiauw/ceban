@@ -50,7 +50,7 @@
                                         <td>{{$item->availableMaximumTicket}}</td>
                                         <td>
                                             <button data-toggle="modal" data-target="#editItemForm" datasrc="{{$item}}" style="font-weight: bold;color: cornflowerblue;text-decoration: none;border: none;background-color: transparent;cursor: pointer">Edit</button>
-                                            <form method="post" action="events/delete/{{$item->eventID}}">
+                                            <form method="post" action="event/delete/{{$item->eventID}}">
                                                 @csrf
                                                 <input type="submit" style="font-weight: bold;color: red;text-decoration: none;border: none;background-color: transparent;cursor: pointer" value="Delete"/>
                                             </form>

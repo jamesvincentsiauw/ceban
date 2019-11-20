@@ -13,12 +13,16 @@ use Illuminate\Support\Str;
 class EventController extends Controller
 {
     public function index(){
-        if (\request()->get('cat')){
-            $cat = \request()->get('cat');
-            $events = Event::all()->where('status','Active')->where('availableMaximumTicket', '>',0)->where('email','!=', Auth::user()->email)->where('category', ucfirst($cat))->sortByDesc('eventDate');
+        if (Auth::user()) {
+            if (\request()->get('cat')) {
+                $cat = \request()->get('cat');
+                $events = Event::all()->where('status', 'Active')->where('availableMaximumTicket', '>', 0)->where('email', '!=', Auth::user()->email)->where('category', ucfirst($cat))->sortByDesc('eventDate');
+            } else {
+                $events = Event::all()->where('status', 'Active')->where('availableMaximumTicket', '>', 0)->where('email', '!=', Auth::user()->email)->sortByDesc('eventDate')->sortByDesc('eventDate');
+            }
         }
-        else {
-            $events = Event::all()->where('status', 'Active')->where('availableMaximumTicket', '>',0)->where('email', '!=', Auth::user()->email)->sortByDesc('eventDate');
+        else{
+            $events = Event::all()->where('status', 'Active')->where('availableMaximumTicket', '>', 0)->sortByDesc('eventDate')->sortByDesc('eventDate');
         }
         return view('events')->with('events',$events);
     }

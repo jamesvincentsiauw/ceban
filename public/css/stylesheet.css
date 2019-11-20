@@ -426,3 +426,17 @@ hgroup h2.lead {
     /*font: normal normal 1.125em "Roboto", Arial, Verdana, sans-serif;*/
 
 }
+
+.roundedCorners {
+    border: 0px solid DarkOrange;
+    border-radius: 13px;
+    border-spacing: 0;
+}
+.roundedCorners td,
+.roundedCorners th {
+    border-bottom: 0px solid DarkOrange;
+    padding: 10px;
+}
+.roundedCorners tr:last-child > td {
+    border-bottom: none;
+}
