@@ -11,31 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/tes', function () {
-    return view('tes');
-});
-
 Auth::routes();
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/search', 'HomeController@viewSearch');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'UserController@profile')->middleware('auth');
+Route::post('/profile', 'UserController@editProfile')->middleware('auth');
 
-Route::get('/ceban', function (){
-    return view('admin.index');
+Route::get('/events', 'EventController@index');
+Route::get('/event/add', 'EventController@addForm')->middleware('auth');
+Route::post('/event/add', 'EventController@addEvent')->middleware('auth');
+Route::post('/event/edit/{id}', 'EventController@editEvent')->middleware('auth');
+Route::post('/event/delete/{id}', 'EventController@deleteEvent')->middleware('auth');
+
+Route::get('/events/buy/{id}', 'ParticipantController@purchase')->middleware('auth');
+Route::post('/events/buy/{id}', 'ParticipantController@purchaseTicket')->middleware('auth');
+Route::get('/mytickets', 'ParticipantController@myTickets')->middleware('auth');
+Route::get('/download/{id}','ParticipantController@generateTicket')->middleware('auth');
+
+Route::get('/owner/register', 'OwnerController@register')->middleware('auth');
+Route::post('/owner/register','OwnerController@beOwner')->middleware('auth');
+Route::post('/owner/delete/{id}', 'OwnerController@deleteOwner')->middleware('auth');
+Route::get('/myevents', 'OwnerController@myEvents')->name('events')->middleware('auth');
+
+Route::get('/tes', function (){
+    return view('tiket');
 });
-Route::get('/users', function (){
-    $users=\Illuminate\Support\Facades\DB::table('users')->orderBy('name')->paginate(10);
-    return view('admin.user', compact('users'));
-});
-Route::get('/mytickets', 'ParticipantController@myTicket');
-Route::get('/events', 'EventController@index')->name('events')->middleware('auth');
-Route::post('/events', 'OwnerController@addEvent');
-Route::post('/events/delete/{id}', 'OwnerController@deleteEvent');
-Route::get('/events/buy/{id}', 'ParticipantController@purchase');
-Route::post('/events/buy/{id}', 'ParticipantController@purchaseTicket');
-Route::get('/owners', 'OwnerController@index')->name('owners')->middleware('auth');
-Route::post('/owners/add','OwnerController@beOwner');
-Route::post('/owners/delete/{id}', 'OwnerController@deleteOwner');

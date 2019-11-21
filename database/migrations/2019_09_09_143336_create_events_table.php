@@ -17,14 +17,17 @@ class CreateEventsTable extends Migration
             $table->string('eventID')->unique()->primary();
             $table->string('poster')->comment('File Path');
             $table->string('eventName');
+            $table->string('description', 500);
             $table->string('category')->comment('Workshop/Seminar/Concert/Other');
             $table->string('location');
             $table->string('price')->default('Rp 0,00');
             $table->string('organizationName');
+            $table->string('email');
             $table->date('eventDate');
             $table->integer('availableMaximumTicket')->comment('99 for infinite');
             $table->string('status')->comment('Active/Expired')->default('Active');
             $table->timestamps();
+            $table->foreign('email')->references('email')->on('owners')->onDelete('cascade');
             $table->foreign('organizationName')->references('organizationName')->on('owners')->onDelete('cascade');
         });
     }

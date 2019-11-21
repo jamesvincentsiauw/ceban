@@ -17,4 +17,5 @@ class Event extends Model
     public function participants(){
         $this->hasMany(Participant::class);
     }
+    public $incrementing = false;
 }

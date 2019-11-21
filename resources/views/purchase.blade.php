@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('content')
     <div class="form-check">
         @if ($message = Session::get('success'))
@@ -53,7 +53,11 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Nomor Telepon<a style="color: darkred; font-weight: bold">*</a></label>
-                        <input type="text" class="form-control" name="phone" placeholder="Nomor Telepon" required/>
+                        @if(\Illuminate\Support\Facades\Auth::user()->phone)
+                            <input type="text" class="form-control" name="phone" placeholder="Nomor Telepon" value="{{Auth::user()->phone}}" required disabled/>
+                        @else
+                            <input type="text" class="form-control" name="phone" placeholder="Nomor Telepon" required/>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="qty">Jumlah Pembelian Tiket <a style="color: darkred; font-weight: bold">*</a></label>

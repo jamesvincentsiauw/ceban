@@ -8,14 +8,10 @@ class Participant extends Model
 {
     protected $fillable = [
         'eventID', 'participantID', 'participantName',
-        'participantEmail','qty',
+        'participantEmail','qty','ticketFile'
     ];
-
+    public $incrementing = false;
     public function events(){
         $this->belongsTo(Event::class);
-    }
-
-    public function tickets(){
-        $this->hasMany(Ticket::class);
     }
 }

@@ -1,43 +1,43 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-lg">
                 <div class="card">
-                    <div class="card-header">User</div>
+                    <div class="card-header">My Tickets</div>
 
                     <div class="table-responsive">
                         <table class="table"  style="text-align: center">
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nama Pengguna</th>
-                                <th>Email</th>
-                                <th>Tanggal Bergabung</th>
+                                <th>Nama Event</th>
+                                <th>Tanggal Event</th>
+                                <th>Lokasi</th>
+                                <th>Ticket</th>
                             </tr>
                             </thead>
                             <?php $i=1 ?>
-                            @foreach($users as $item)
+                            @foreach($data as $item)
                                 <tbody>
                                 <tr>
                                     <td>{{$i}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->email}}</td>
-                                    <td>{{$item->created_at}}</td>
+                                    <td>{{$item->eventName}}</td>
+                                    <td>{{$item->eventDate}}</td>
+                                    <td>{{$item->location}}</td>
+                                    <td>
+                                        <a href="/download/{{$item->participantID}}" class="btn btn-outline-primary">Download Ticket</a>
+                                    </td>
                                 </tr>
                                 </tbody>
                                 <?php $i++ ?>
                             @endforeach
                         </table>
                     </div>
-                    <div class="pagination text-center" style="justify-content: center">{{ $users->links() }}</div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <a class="btn btn-success btn-lg" href="/ceban" style="background-color: indianred; color: black; font-weight: 500">
-                Back to Dashboard
-            </a>
-        </div>
+        <br><br><br>
+    </div>
 @endsection

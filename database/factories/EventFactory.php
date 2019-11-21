@@ -12,10 +12,12 @@ $factory->define(Event::class, function (Faker $faker) use ($factory) {
         'eventID' =>Str::random(10),
         'poster' =>'to be announced',
         'eventName'=> $faker->domainName,
+        'description' => $faker->paragraph,
         'category'=> $faker->randomElement($cat),
         'location'=>$faker->streetAddress,
         'price'=>"Rp " . number_format('50000',2,',','.'),
         'organizationName' => $factory->create(\App\Owner::class)->organizationName,
+        'email' => $factory->create(\App\Owner::class)->email,
         'eventDate' => $faker->date(),
         'availableMaximumTicket'=>$faker->numberBetween(100,200),
         'status'=>'Active'
