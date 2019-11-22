@@ -17,6 +17,7 @@ $ composer install
 ```
 $ php artisan migrate
 ```
+* If the migration has issues, import the DB_Data.sql to your database
 * Generate Key for your Device
 ```
 $ php artisan key:generate
