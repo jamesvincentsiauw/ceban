@@ -23,8 +23,8 @@ class CreateParticipantsTable extends Migration
             $table->boolean('verified')->default(false);
             $table->string('ticketFile')->default('TBD');
             $table->timestamps();
-            $table->foreign('participantEmail')->references('email')->on('users')->onDelete('cascade');
-            $table->foreign('eventID')->references('eventID')->on('events')->onDelete('cascade');
+            $table->foreign('participantEmail')->references('email')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('eventID')->references('eventID')->on('events')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

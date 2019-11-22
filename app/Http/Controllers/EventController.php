@@ -22,7 +22,12 @@ class EventController extends Controller
             }
         }
         else{
-            $events = Event::all()->where('status', 'Active')->where('availableMaximumTicket', '>', 0)->sortByDesc('eventDate')->sortByDesc('eventDate');
+            if (\request()->get('cat')) {
+                $cat = \request()->get('cat');
+                $events = Event::all()->where('status', 'Active')->where('availableMaximumTicket', '>', 0)->where('category', ucfirst($cat))->sortByDesc('eventDate');
+            } else {
+                $events = Event::all()->where('status', 'Active')->where('availableMaximumTicket', '>', 0)->sortByDesc('eventDate')->sortByDesc('eventDate');
+            }
         }
         return view('events')->with('events',$events);
     }
@@ -53,6 +58,7 @@ class EventController extends Controller
             $event->location = $request->location;
             $event->category = $request->category;
             $event->price = "Rp " . number_format($request->price,2,',','.');
+            $event->description = $request->description;
             $event->organizationName = $companyName->organizationName;
             $event->email = Auth::user()->email;
             $event->eventDate = $request->eventDate;

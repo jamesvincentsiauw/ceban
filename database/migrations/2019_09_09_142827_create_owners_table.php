@@ -19,7 +19,7 @@ class CreateOwnersTable extends Migration
             $table->string('organizationPhone');
             $table->string('location');
             $table->timestamps();
-            $table->foreign('email')->references('email')->on('users')->onDelete('cascade');
+            $table->foreign('email')->references('email')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

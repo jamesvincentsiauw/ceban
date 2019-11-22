@@ -27,8 +27,8 @@ class CreateEventsTable extends Migration
             $table->integer('availableMaximumTicket')->comment('99 for infinite');
             $table->string('status')->comment('Active/Expired')->default('Active');
             $table->timestamps();
-            $table->foreign('email')->references('email')->on('owners')->onDelete('cascade');
-            $table->foreign('organizationName')->references('organizationName')->on('owners')->onDelete('cascade');
+            $table->foreign('email')->references('email')->on('owners')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('organizationName')->references('organizationName')->on('owners')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
