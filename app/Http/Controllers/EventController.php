@@ -61,7 +61,7 @@ class EventController extends Controller
             $event->save();
             $file->move($dest_path, $fileName);
 
-            return redirect()->back()->with('success','Selamat Event Anda telah terdaftar!');
+            return redirect('/myevents')->with('success','Selamat Event Anda telah terdaftar!');
         }
         catch (\Exception $exception){
             return redirect()->back()->with('alert',$exception->getMessage());

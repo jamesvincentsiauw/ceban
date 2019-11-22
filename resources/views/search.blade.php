@@ -19,7 +19,7 @@
                             <ul class="meta-search">
                                 <li><i class="glyphicon glyphicon-calendar"></i> <span>Date: {{$item->eventDate}}</span></li>
                                 <li><i class="glyphicon glyphicon-tags"></i> <span>Category: {{$item->category}}</span></li>
-                                <button type="button" class="btn btn-outline-success">Buy Ticket!</button>
+                                <button onclick="window.location.href='/events/buy/{{$item->eventID}}'" type="button" class="btn btn-outline-success">Buy Ticket!</button>
                             </ul>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
