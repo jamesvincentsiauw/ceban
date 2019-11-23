@@ -13,11 +13,7 @@ $ composer install
 * Copy `.env.example` file to `.env file`
 * Change the `.env` file with your credential
 * Create database named `portal_llh` 
-* Migrate the Database Table
-```
-$ php artisan migrate
-```
-* If the migration has issues, import the DB_Data.sql to your database
+* Import the DB_Data.sql to your database
 * Generate Key for your Device
 ```
 $ php artisan key:generate
