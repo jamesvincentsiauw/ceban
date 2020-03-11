@@ -3,7 +3,7 @@
 ##### How to configure the code on your devices:
 * Clone the Repository
 ```
-$ git clone https://github.com/jamesvincentsiauw/portal-LLH.git
+$ git clone https://github.com/jamesvincentsiauw/ceban.git
 ```
 * Run Terminal / Command Prompt
 * Install Dependencies 
